@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat with Qwen</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <main class="chat-shell">
+    <header class="header">
+      <div class="mark" aria-hidden="true">✳</div>
+      <div>
+        <p class="eyebrow">LOCAL AI</p>
+        <h1>Chat with Qwen</h1>
+      </div>
+      <span class="model-pill">qwen3:1.7b</span>
+    </header>
+
+    <section class="collection" aria-labelledby="collection-title">
+      <div class="collection-heading">
+        <div><p class="eyebrow">YOUR LOCAL FILES</p><h2 id="collection-title">Document Collection</h2></div>
+        <label class="upload-button" for="document-input">＋ Add documents</label>
+        <input id="document-input" type="file" accept=".pdf,.docx,.txt,.md,.markdown" multiple hidden>
+      </div>
+      <p id="collection-status" class="collection-status">Documents are stored on this computer and indexed locally.</p>
+      <ul id="document-list" class="document-list" aria-live="polite"></ul>
+    </section>
+
+    <section id="conversation" class="conversation" aria-label="Conversation" aria-live="polite">
+      <div id="welcome" class="welcome">
+        <div class="welcome-icon" aria-hidden="true">✦</div>
+        <h2>What’s on your mind?</h2>
+        <p>Ask Qwen anything, including questions about documents in your collection.</p>
+      </div>
+    </section>
+
+    <form id="chat-form" class="composer">
+      <label class="visually-hidden" for="message-input">Your message</label>
+      <textarea id="message-input" rows="1" placeholder="Message Qwen…" required></textarea>
+      <button id="send-button" type="submit" aria-label="Send message">
+        <span>Send</span><span aria-hidden="true">↑</span>
+      </button>
+      <p class="hint">Enter to send · Shift + Enter for a new line</p>
+    </form>
+    <footer>Running locally with Ollama</footer>
+  </main>
+</body>
+</html>

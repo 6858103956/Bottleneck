@@ -1,0 +1,51 @@
+# Local documents and application data
+/data/
+/uploads/
+/documents/
+/local_data/
+/chroma/
+/chroma_db/
+/chromadb/
+**/uploads/
+**/chroma/
+**/chroma_db/
+**/chromadb/
+
+# Uploaded document formats (including copies placed outside the data directory)
+*.pdf
+*.PDF
+*.doc
+*.docx
+*.DOC
+*.DOCX
+*.odt
+*.rtf
+
+# Local databases and vector index files
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+
+# Python virtual environments, bytecode, and test/tool caches
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+coverage.xml
+
+# Environment secrets and local configuration
+.env
+.env.*
+!.env.example
+!.env.sample
